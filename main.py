@@ -6,18 +6,14 @@ engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[0].id)
 
-# Variable activation word - Need to add the ability to change this in the future
-activiationWord = 'computer'
-
-
 # TTS Creation
-
 def speak(text, rate=150):
     engine.setProperty('rate', rate)
     engine.say(text)
     engine.runAndWait()
 
-#Making this thing be able to take in commands
+
+# Making this thing be able to take in commands
 def parseCommand(displayMessages):
     listener = sr.Recognizer()
 
@@ -29,7 +25,7 @@ def parseCommand(displayMessages):
             input_speech = listener.listen(source)
 
             try:
-                query = listener.recognize_google(input_speech, language='en-us',with_confidence=False)
+                query = listener.recognize_google(input_speech, language='en-us', with_confidence=False)
                 if displayMessages:
                     print('Working on what you said...')
                     print(f'You said: {query}')
@@ -46,5 +42,6 @@ def main():
     if __name__ == '__main__':
         print('Garvis Online')
         speak('Garvis Online')
+
 
 main()
