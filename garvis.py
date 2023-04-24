@@ -1,5 +1,7 @@
 from threading import Thread
 import pyttsx3
+import pyaudio
+import speech
 
 
 class Garvis(Thread):
@@ -21,9 +23,12 @@ class Garvis(Thread):
         Thread.__init__(self)
         self.daemon = True
         self.start()
+
+        # Begin TTS and commands.
         self._ttsVoice()
         print("Garvis Online.")
         self.speak('Garvis Online')
+        speech.speechRecognition()
 
 
 Garvis()
