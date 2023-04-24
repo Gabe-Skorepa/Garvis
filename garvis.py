@@ -1,6 +1,5 @@
 from threading import Thread
 import pyttsx3
-import pyaudio
 import speech
 
 
