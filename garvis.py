@@ -24,11 +24,15 @@ class Garvis(Thread):
         self.daemon = True
         self.start()
 
-        # Begin TTS and commands.
+        # Begin TTS / "Boot Garvis" on the front of what an end user should get here.
         self._ttsVoice()
         print("Garvis Online.")
         self.speak('Garvis Online')
-        speech.speechRecognition()
+        self.speak("How's it goin?")
+
+        # This should be where it starts listening, as of now if I implement that,
+        # it just hears one thing, translates it, and closes program.
+        # speech.speechRecognition().parseCommand()
 
 
 Garvis()
