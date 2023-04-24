@@ -1,16 +1,5 @@
-import pyttsx3
 import speech_recognition as sr
 
-# Creating the main speech engine brain of Garvis as a whole
-engine = pyttsx3.init()
-voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[0].id)
-
-# TTS Creation
-def speak(text, rate=150):
-    engine.setProperty('rate', rate)
-    engine.say(text)
-    engine.runAndWait()
 
 
 # Making this thing be able to take in commands
@@ -35,13 +24,3 @@ def parseCommand(displayMessages):
                     print(exception)
                     return 'None'
             return query
-
-
-# ah, the good ol main function.
-def main():
-    if __name__ == '__main__':
-        print('Garvis Online')
-        speak('Garvis Online')
-
-
-main()
