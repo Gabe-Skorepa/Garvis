@@ -1,6 +1,6 @@
 from threading import Thread
 import pyttsx3
-import speech
+import voiceInput
 
 
 class Garvis(Thread):
@@ -31,7 +31,7 @@ class Garvis(Thread):
 
         # This should be where it starts listening, as of now if I implement that,
         # it just hears one thing, translates it, and closes program.
-        # speech.speechRecognition().parseCommand()
+        # voiceInput.speechRecognition().parseCommand()
 
 
 Garvis()
