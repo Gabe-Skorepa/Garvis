@@ -1,6 +1,7 @@
 from threading import Thread
 import pyttsx3
-import voiceInput
+import time
+import commandInput
 
 
 class Garvis(Thread):
@@ -27,11 +28,11 @@ class Garvis(Thread):
         self._ttsVoice()
         print("Garvis Online.")
         self.speak('Garvis Online')
-        self.speak("How's it goin?")
+        self.speak("How are you sir?", rate=200)
 
-        # This should be where it starts listening, as of now if I implement that,
-        # it just hears one thing, translates it, and closes program.
-        # voiceInput.speechRecognition().parseCommand()
+    def run(self):
+        while True:
+            commandInput.commandInput().parseCommand()
 
 
-Garvis()
+Garvis().run()
