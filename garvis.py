@@ -1,7 +1,7 @@
 from threading import Thread
 import pyttsx3
 import time
-import commandInput
+import voiceInput
 
 
 class Garvis(Thread):
@@ -32,7 +32,7 @@ class Garvis(Thread):
 
     def run(self):
         while True:
-            commandInput.commandInput().parseCommand()
+            voiceInput.voiceIn().parseSpeech()
 
 
 Garvis().run()

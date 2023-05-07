@@ -1,9 +1,9 @@
 import speech_recognition as sr
 
 
-class commandInput:
+class voiceIn:
     # def parseCommand(displayMessages):
-    def parseCommand(self):
+    def parseSpeech(self):
         listener = sr.Recognizer()
 
         print('Listening for a command...')
@@ -17,7 +17,7 @@ class commandInput:
                 print('Working on what you said...')
                 print(f'You said: {query}')
             except Exception as exception:
-                    print("Sorry, didn't quite catch that")
-                    print(exception)
-                    return 'None'
+                print("Sorry, didn't quite catch that")
+                print(exception)
+                return 'None'
             return query
